@@ -9,7 +9,7 @@ const HomePage = () => {
       <h1>Wellcome!</h1>
       <p>Our description</p>
       <button type="button">
-        <Link to="/cars">Cars</Link>
+        <Link to="/catalog">Cars</Link>
       </button>
       <button type="button">
         <Link to="/favorite">Favorite</Link>
