@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { BtnHeart, ButtonS, CarItemStyled, ImgThumb } from './CarItemStyled';
+import { ButtonS, CarItemStyled, ImgThumb } from './CarItemStyled';
 
 export const CarItem = ({ car, handleOnClick }) => {
   const {
