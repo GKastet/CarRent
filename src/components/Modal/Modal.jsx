@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react';
-import { ModalContainerS, OverlayStyled } from './ModalStyled';
+import { useEffect } from 'react';
+import { OverlayStyled } from './ModalStyled';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectModalOpen } from 'redux/selectors';
 import { findCarModal, toggleShowModal } from 'redux/Slices/modalSlice';
-import { AiOutlineClose } from 'react-icons/ai';
 import { createPortal } from 'react-dom';
 import { ModalMarkUp } from './ModalMarkUp';
 
@@ -48,18 +47,12 @@ export const Modal = () => {
   return createPortal(
     <>
       <OverlayStyled onClick={handleClickOverlay}>
-        <div>
-          {/* <button type="button" onClick={handleClickBtnClose}>
-            <AiOutlineClose size={16} fill="black" />
-          </button> */}
+        <div>          
           {isOpen &&                        
               <ModalMarkUp handleClickBtnClose={handleClickBtnClose}/>            
           }
         </div>
-      </OverlayStyled>
-      {/* <ModalContainerS>
-        <div>ModalADD</div>
-      </ModalContainerS> */}
+      </OverlayStyled>      
     </>,
     modalRoot
   );

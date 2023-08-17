@@ -3,27 +3,30 @@ import { PageContainer } from './PagesStyles/CommonPageStyles';
 import { Form } from 'components/Form/Form';
 import { CarList } from 'components/CarList/CarList';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectCarsCatalog } from 'redux/selectors';
-import { getCarsCatalogThunk } from 'redux/Thunks/Thunks';
+import { selectCarsCatalog, selectCarsPerPage } from 'redux/selectors';
+import { getCarsCatalogThunk, getCarsPerPageThunk } from 'redux/Thunks/Thunks';
+import { BtnLoadMore } from 'components/Buttons/BtnLoadMore';
 
 const CarsPage = () => {
   const carsCatalog = useSelector(selectCarsCatalog);
+  const carsPerPage = useSelector(selectCarsPerPage);
+  
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (carsCatalog?.length) return;
-    console.log('api request');
+    if (carsCatalog?.length) return;    
     dispatch(getCarsCatalogThunk());
+    dispatch(getCarsPerPageThunk());
   }, [carsCatalog?.length, dispatch]);
+
 
   return (
     <PageContainer>
       <div>        
         <Form />
         <CarList />
-        <button type="button">Button</button>
-        <button type="button">LoadMore</button>
+        {carsPerPage?.length < carsCatalog?.length ? <BtnLoadMore/> : <></>}
       </div>
     </PageContainer>
   );

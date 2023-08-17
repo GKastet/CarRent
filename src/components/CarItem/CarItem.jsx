@@ -1,7 +1,14 @@
 import PropTypes from 'prop-types';
 import { ButtonS, CarItemStyled, ImgThumb } from './CarItemStyled';
+import { BtnHeart } from 'components/Buttons/BtnHeart';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectCarsCatalog, selectFavoriteCars } from 'redux/selectors';
+import { useEffect, useRef, useState } from 'react';
+import { deleteCarFavorite, findCarFavorite } from 'redux/Slices/favoriteSlice';
+import { useLocation } from 'react-router-dom';
 
 export const CarItem = ({ car, handleOnClick }) => {
+  
   const {
     img,
     make,
@@ -20,17 +27,44 @@ export const CarItem = ({ car, handleOnClick }) => {
   const country = newAddress[4];
   const accessoryShort = accessories[0].split(' ').slice(0, 2).join(' ');
 
-  // const isOpen = useSelector(selectModalOpen);
-  // console.log('isOpen', isOpen);
+  const carsCatalog = useSelector(selectCarsCatalog);
+  const favoriteCars = useSelector(selectFavoriteCars);
+  const dispatch = useDispatch();
+  // const location = useLocation()
+  // console.log(location);
+
+  const favouriteCar = carsCatalog.find(car => car.id === id);
+  const isFavorite = favoriteCars.find(car => car.id === id);
+
+  const [heartColor, setHeartColor] = useState(false);
+
+  useEffect(()=>{
+    if(heartColor)
+    setHeartColor(!heartColor)
+}, [heartColor])
+
+  const onBtnHeartClick = () => {    
+    setHeartColor(!heartColor);    
+
+    if (isFavorite) {
+      const deleteCar = favoriteCars.filter(car => car.id !== id);
+      dispatch(deleteCarFavorite(deleteCar));
+      return;
+    }
+    dispatch(findCarFavorite(favouriteCar));
+  };  
 
   return (
     <CarItemStyled key={id}>
       <ImgThumb>
         <img src={img} alt={`${make} ${model}`} />
       </ImgThumb>
-      {/* <BtnHeart type='button'>
-        <AiOutlineHeart/>
-        </BtnHeart>      */}
+      <BtnHeart
+        // id={id}
+        onBtnHeartClick={onBtnHeartClick}
+        heartColor={heartColor}
+        isFavorite={isFavorite}
+      />
       <div>
         <h3>
           {make} <span>{model}</span>, {year}

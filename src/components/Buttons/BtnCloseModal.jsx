@@ -1,9 +1,10 @@
-
+import { AiOutlineClose } from "react-icons/ai"
+import { BtnCloseStyled } from "./BtnCloseModalStyled"
 
 export const BtnCloseModal = ({handleClickBtnClose}) => {
   return (
-    <button type="button" onClick={handleClickBtnClose}>
-        CLOSE{/* <AiOutlineClose size={16} fill="black" /> */}
-      </button>
+    <BtnCloseStyled type="button" onClick={handleClickBtnClose}>
+        <AiOutlineClose size={24} fill="black" />
+      </BtnCloseStyled>
   )
 }

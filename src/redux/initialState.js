@@ -1,5 +1,6 @@
 export const initialState = {
   cars: [],
+  carsPerPage: [],
 };
 
 export const initialStateRoot = {
@@ -10,4 +11,8 @@ export const initialStateRoot = {
 export const initialStateModal = {
   isOpen: false,
   carModal: null
+}
+
+export const initialStateFavorite = {
+  favoriteCars: []
 }

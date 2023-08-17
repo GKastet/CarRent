@@ -5,6 +5,7 @@ export const CarItemStyled = styled.li`
   width: 100%;
   max-width: 274px;
   height: 426px;
+  position: relative;
   
   div {
     display: flex;
@@ -16,16 +17,19 @@ export const CarItemStyled = styled.li`
       font-weight: 500;
       line-height: 24px;
     }
+    span{
+      color: var(--blue-hover)
+    }
   }
   ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 4px;
     margin-bottom: 26px;
     padding: 0 1px;
 
     li {
-      font-size: 10px;
+      font-size: 11px;
       line-height: 18px;
       color: var(--text-lightgrey);
     }
@@ -53,12 +57,6 @@ export const ButtonS = styled.button`
     font-size: 14px;
     line-height: 20px;
   }
-`;
-
-export const BtnHeart = styled.button`
-  width: 18px;
-  height: 18px;
-  position: absolute;
 `;
 
 export const ImgThumb = styled.div`

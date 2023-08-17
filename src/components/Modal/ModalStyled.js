@@ -11,7 +11,7 @@ export const OverlayStyled = styled.div`
   backdrop-filter: blur(3.5px);
   overscroll-behavior: contain;
   div {
-    outline: 1px solid red;
+    outline: 1px solid lightgrey;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -21,7 +21,7 @@ export const OverlayStyled = styled.div`
     max-height: 100vh;
     box-sizing: border-box;
     width: 541px;
-    height: 700px;
+    height: 730px;
     border-radius: 24px;
     padding: 20px;
     

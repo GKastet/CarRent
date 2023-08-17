@@ -1,15 +1,18 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { selectCarsCatalog, selectModalOpen } from 'redux/selectors';
+import { selectCarsCatalog, selectCarsPerPage, selectModalOpen } from 'redux/selectors';
 import { CarItem } from '../CarItem/CarItem';
 import { CatalogStyled } from './CarListStyled';
 import { Modal } from 'components/Modal/Modal';
 import { findCarModal, toggleShowModal } from 'redux/Slices/modalSlice';
 
 export const CarList = () => {
-  const carsCatalog = useSelector(selectCarsCatalog);
+  //const carsCatalog = useSelector(selectCarsCatalog);
+  const carsPerPage = useSelector(selectCarsPerPage);
+
+  
   const isOpen = useSelector(selectModalOpen);
-  const dispatch = useDispatch();
   const allCars = useSelector(selectCarsCatalog);
+  const dispatch = useDispatch();
 
   const handleOnClick = evt => {
     const findCar = allCars.find(
@@ -20,11 +23,10 @@ export const CarList = () => {
   };
 
   return (
-    <>
-      <div>CarList</div>
+    <>      
       <CatalogStyled>
-        {carsCatalog?.length &&
-          carsCatalog.map(car => (
+        {carsPerPage?.length &&
+          carsPerPage.map(car => (
             <CarItem key={car.id} car={car} handleOnClick={handleOnClick} />
           ))}
       </CatalogStyled>
