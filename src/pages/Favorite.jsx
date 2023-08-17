@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageContainer } from './PagesStyles/CoomonPageStyles';
+import { PageContainer } from './PagesStyles/CommonPageStyles';
 
 const FavoritePage = () => {
   return (

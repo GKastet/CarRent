@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageContainer } from './PagesStyles/CoomonPageStyles';
+import { PageContainer } from './PagesStyles/CommonPageStyles';
 import { Link } from 'react-router-dom';
 
 const HomePage = () => {
