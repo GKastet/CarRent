@@ -5,8 +5,7 @@ export const getApiCarsCatalog = async () => {
     return data
 }
 
-export const getCarsPerPage = async (page=1) => {
-    console.log(page);
+export const getCarsPerPage = async (page=1) => {    
     const {data} = await instance.get('carrental', {params: {
         page: page,
         limit: 8
@@ -14,4 +13,3 @@ export const getCarsPerPage = async (page=1) => {
     console.log(data);
     return data
 }
-// getCarsPerPage()

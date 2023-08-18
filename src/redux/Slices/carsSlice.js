@@ -13,6 +13,12 @@ const fulfilledGetCarsPerPage = (state, { payload }) => {
 const carsSlice = createSlice({
   name: 'cars',
   initialState,
+  reducers: {
+    searchCars: (state, {payload}) =>{
+      state.filter = payload
+    }
+
+  },
   extraReducers: builder => {
     builder
     .addCase(getCarsCatalogThunk.fulfilled, fulfilledGetCarsCatalog)
@@ -21,3 +27,4 @@ const carsSlice = createSlice({
 });
 
 export const carsReducer = carsSlice.reducer;
+export const {searchCars} = carsSlice.actions;

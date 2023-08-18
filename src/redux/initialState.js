@@ -1,5 +1,6 @@
 export const initialState = {
   cars: [],
+  filter: null,
   carsPerPage: [],
 };
 

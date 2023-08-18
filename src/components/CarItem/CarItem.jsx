@@ -3,9 +3,10 @@ import { ButtonS, CarItemStyled, ImgThumb } from './CarItemStyled';
 import { BtnHeart } from 'components/Buttons/BtnHeart';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectCarsCatalog, selectFavoriteCars } from 'redux/selectors';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect,  useState } from 'react';
 import { deleteCarFavorite, findCarFavorite } from 'redux/Slices/favoriteSlice';
-import { useLocation } from 'react-router-dom';
+//import { useLocation } from 'react-router-dom';
+import { notifyCarAdded, notifyCarRemoved } from 'components/Toastify/Toastify';
 
 export const CarItem = ({ car, handleOnClick }) => {
   
@@ -29,9 +30,8 @@ export const CarItem = ({ car, handleOnClick }) => {
 
   const carsCatalog = useSelector(selectCarsCatalog);
   const favoriteCars = useSelector(selectFavoriteCars);
-  const dispatch = useDispatch();
-  // const location = useLocation()
-  // console.log(location);
+  const dispatch = useDispatch(); 
+  
 
   const favouriteCar = carsCatalog.find(car => car.id === id);
   const isFavorite = favoriteCars.find(car => car.id === id);
@@ -49,9 +49,11 @@ export const CarItem = ({ car, handleOnClick }) => {
     if (isFavorite) {
       const deleteCar = favoriteCars.filter(car => car.id !== id);
       dispatch(deleteCarFavorite(deleteCar));
+      notifyCarRemoved()
       return;
     }
-    dispatch(findCarFavorite(favouriteCar));
+    notifyCarAdded()
+    dispatch(findCarFavorite(favouriteCar))    
   };  
 
   return (
