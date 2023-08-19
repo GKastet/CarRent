@@ -20,16 +20,14 @@ export const SearchForm = () => {
     function capitalizeString(str) {
       return str.charAt(0).toUpperCase() + str.slice(1);
     }
-
-    console.log('values: ', values);
+    
     const capitalizedModel = capitalizeString(values.model);
     const carPrice = `$${values.rentalPrice}`;
 
     const filteredCars = capitalizedModel
       ? carsCatalog.filter(car => car.make === capitalizedModel)
       : carsCatalog.filter(car => car.rentalPrice === carPrice);
-
-    console.log('filteredCars: ', filteredCars);
+    
     if (!filteredCars?.length > 0) {
       notifyCarSearchError();
       return;
