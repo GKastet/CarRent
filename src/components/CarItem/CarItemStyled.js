@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 export const CarItemStyled = styled.li`
-  /* outline: 1px solid red; */
   width: 100%;
   max-width: 274px;
   height: 426px;
   position: relative;
-  
+  border-radius: 14px;
+  background-color: rgba(255, 255, 255, 0.8);
+
   div {
     display: flex;
     justify-content: space-between;
@@ -17,8 +18,8 @@ export const CarItemStyled = styled.li`
       font-weight: 500;
       line-height: 24px;
     }
-    span{
-      color: var(--blue-hover)
+    span {
+      color: var(--blue-hover);
     }
   }
   ul {
@@ -34,7 +35,6 @@ export const CarItemStyled = styled.li`
       color: var(--text-lightgrey);
     }
   }
- 
 `;
 
 export const ButtonS = styled.button`
@@ -42,7 +42,7 @@ export const ButtonS = styled.button`
   height: 44px;
   padding: 12px 99px;
   border-radius: 12px;
-  border-color: transparent;  
+  border-color: transparent;
   transition: background-color 300ms ease-in;
   background-color: var(--blue-normal);
 

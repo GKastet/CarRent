@@ -1,12 +1,11 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const BtnRentalStyled = styled.button`
-
   width: 168px;
   height: 44px;
   padding: 12px 50px;
   border-radius: 12px;
-  border-color: transparent;  
+  border-color: transparent;
   transition: background-color 300ms ease-in;
   background-color: var(--blue-normal);
 

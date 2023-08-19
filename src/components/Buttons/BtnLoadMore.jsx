@@ -8,7 +8,7 @@ export const BtnLoadMore = () => {
   const dispatch = useDispatch();
 
   const handlerLoadMore = () => {
-    page += 1;    
+    page += 1;
     dispatch(getCarsPerPageThunk(page));
   };
 

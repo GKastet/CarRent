@@ -9,6 +9,6 @@ export const BtnHeartS = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: none;  
+  border: none;
   background-color: transparent;
 `;

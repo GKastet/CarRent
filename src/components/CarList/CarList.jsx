@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { selectCarsCatalog, selectModalOpen } from 'redux/selectors';
 import { CarItem } from '../CarItem/CarItem';
-import { BackImgDiv, CatalogStyled } from './CarListStyled';
+import { CatalogStyled } from './CarListStyled';
 import { Modal } from 'components/Modal/Modal';
 import { findCarModal, toggleShowModal } from 'redux/Slices/modalSlice';
 
-export const CarList = ({cars}) => {
+export const CarList = ({ cars }) => {
   const isOpen = useSelector(selectModalOpen);
   const allCars = useSelector(selectCarsCatalog);
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ export const CarList = ({cars}) => {
   };
 
   return (
-    <BackImgDiv>      
+    <div>
       <CatalogStyled>
         {cars?.length &&
           cars.map(car => (
@@ -27,6 +27,6 @@ export const CarList = ({cars}) => {
           ))}
       </CatalogStyled>
       {isOpen && <Modal />}
-    </BackImgDiv>
+    </div>
   );
 };

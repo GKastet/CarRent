@@ -6,25 +6,24 @@ const fulfilledGetCarsCatalog = (state, { payload }) => {
   state.cars = payload;
 };
 
-const fulfilledGetCarsPerPage = (state, { payload }) => {  
+const fulfilledGetCarsPerPage = (state, { payload }) => {
   state.carsPerPage = [...state.carsPerPage, ...payload];
-}
+};
 
 const carsSlice = createSlice({
   name: 'cars',
   initialState,
   reducers: {
-    searchCars: (state, {payload}) =>{
-      state.filter = payload
-    }
-
+    searchCars: (state, { payload }) => {
+      state.filter = payload;
+    },
   },
   extraReducers: builder => {
     builder
-    .addCase(getCarsCatalogThunk.fulfilled, fulfilledGetCarsCatalog)
-    .addCase(getCarsPerPageThunk.fulfilled, fulfilledGetCarsPerPage)
+      .addCase(getCarsCatalogThunk.fulfilled, fulfilledGetCarsCatalog)
+      .addCase(getCarsPerPageThunk.fulfilled, fulfilledGetCarsPerPage);
   },
 });
 
 export const carsReducer = carsSlice.reducer;
-export const {searchCars} = carsSlice.actions;
+export const { searchCars } = carsSlice.actions;

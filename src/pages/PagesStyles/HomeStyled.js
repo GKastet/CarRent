@@ -10,11 +10,10 @@ export const StyledDiv = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  position: absolute;  
+  position: absolute;
 `;
 
 export const TextDiv = styled.div`
-  /* outline: 1px solid red; */
   max-width: 350px;
   display: flex;
   flex-direction: column;
@@ -22,27 +21,26 @@ export const TextDiv = styled.div`
   position: relative;
   margin: 0;
   top: 10%;
-  left: 20%;
+  left: 12%;
   transform: translate(-50%, -50%);
 `;
 export const TextBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  h1{
+  h1 {
     font-size: 30px;
     font-weight: 600;
     margin-bottom: 10px;
-    color: #040458;
+    color: var(--text-navy);
   }
   p {
     display: block;
     font-size: 18px;
     font-weight: 500;
     margin-bottom: 10px;
-    color: #040458;
+    color: var(--text-navy);
   }
-
 `;
 export const ButtonsBox = styled.div`
   display: flex;

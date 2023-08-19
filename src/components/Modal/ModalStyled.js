@@ -7,7 +7,6 @@ export const OverlayStyled = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: var(--backdrop-background);
-  /* background-color: lightgray; */
   backdrop-filter: blur(3.5px);
   overscroll-behavior: contain;
   div {
@@ -20,21 +19,9 @@ export const OverlayStyled = styled.div`
     max-width: 100vw;
     max-height: 100vh;
     box-sizing: border-box;
-    width: 541px;
-    height: 730px;
+    width: 600px;
+    height: 680px;
     border-radius: 24px;
     padding: 20px;
-    
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; */
-  }
-  button{
-    /* margin-left: 300px; */
-    
-    /* position: absolute; */
-    /* z-index: 100; */
   }
 `;
-

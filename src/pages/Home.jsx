@@ -1,11 +1,12 @@
 import React from 'react';
 import { PageContainer } from './PagesStyles/CommonPageStyles';
 import { Link } from 'react-router-dom';
-import { ButtonsBox, StyledDiv, TextBox, TextDiv } from './PagesStyles/HomeStyled';
-
-
-
-
+import {
+  ButtonsBox,
+  StyledDiv,
+  TextBox,
+  TextDiv,
+} from './PagesStyles/HomeStyled';
 
 const HomePage = () => {
   return (

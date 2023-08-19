@@ -6,8 +6,6 @@ export const BtnResetSearch = () => {
 
   const handlerResetSearch = () => {
     dispatch(searchCars(null));
-    // formik.resetForm()
-    // Form.reset()
   };
   return (
     <button type="button" onClick={handlerResetSearch}>

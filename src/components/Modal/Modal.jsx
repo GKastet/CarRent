@@ -47,12 +47,10 @@ export const Modal = () => {
   return createPortal(
     <>
       <OverlayStyled onClick={handleClickOverlay}>
-        <div>          
-          {isOpen &&                        
-              <ModalMarkUp handleClickBtnClose={handleClickBtnClose}/>            
-          }
+        <div>
+          {isOpen && <ModalMarkUp handleClickBtnClose={handleClickBtnClose} />}
         </div>
-      </OverlayStyled>      
+      </OverlayStyled>
     </>,
     modalRoot
   );

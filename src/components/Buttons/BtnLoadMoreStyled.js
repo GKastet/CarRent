@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const BtnLoadMoreS = styled.button`
   width: 100px;
-  /* height:24px; */
   display: flex;
   align-items: center;
   justify-content: center;

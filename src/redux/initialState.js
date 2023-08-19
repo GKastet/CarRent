@@ -11,9 +11,9 @@ export const initialStateRoot = {
 
 export const initialStateModal = {
   isOpen: false,
-  carModal: null
-}
+  carModal: null,
+};
 
 export const initialStateFavorite = {
-  favoriteCars: []
-}
+  favoriteCars: [],
+};

@@ -6,12 +6,11 @@ const favoriteSlice = createSlice({
   initialState: initialStateFavorite,
   reducers: {
     findCarFavorite: (state, { payload }) => {
-      // console.log(payload);
       state.favoriteCars.push(payload);
     },
-    deleteCarFavorite: (state, { payload }) => {        
-        state.favoriteCars = payload
-    }
+    deleteCarFavorite: (state, { payload }) => {
+      state.favoriteCars = payload;
+    },
   },
 });
 
